@@ -1,0 +1,71 @@
+.skin-blue .main-header .navbar {
+	background-color: #09B0B9;
+}
+.skin-blue .main-header .logo {
+    background-color: #09B0B9;
+	font-family: "Georgia", Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+.sidebar-toggle {height: 50px; padding-top: 1px !important;}
+.content-wrapper,
+.right-side {
+background-color: #ffffff;
+}
+
+.content {
+    min-height: 250px;
+    padding: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: darkslategray;
+}
+.content-wrapper, .right-side {
+    background-color: darkslategray;
+}
+.box-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px;
+    background-color: cadetblue;
+}
+.box-footer {
+    display: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 1px solid #f4f4f4;
+    padding: 10px;
+    background-color: #fff;
+}
+.bg-navy {
+    background-color: #222d32!important;
+}
+
+.ht_master tr td {
+  color: black
+}
+
+.handsontable th {
+  background-color: #222d32;
+  color: white
+}
+.ht_master tr > td {
+  border-bottom: 1px solid black;
+}
+
+/* Right */
+.ht_master tr > td {
+  border-right: 1px solid black;
+}
+.widget-user-2 .widget-user-header {
+    padding: 6px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+              

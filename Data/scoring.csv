@@ -1,0 +1,11 @@
+Stage;category;points
+Group;correct_sign;2
+Group;correct_goal_diff;3
+Group;correct_score;5
+8th_final;per_correct_team;4
+Quarter_final;per_correct_team;6
+Semi_final;per_correct_team;8
+Final;per_correct_team;10
+Winner;correct;15
+Top_scorer;correct;15
+Yellow_cards;closest;10
