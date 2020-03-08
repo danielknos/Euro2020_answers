@@ -1,55 +1,56 @@
-"","Game_No","Round_Number","Date","Location","Home_Team","Away_Team","Group","Home","Away"
-"1","1","1","2020-06-12 21:00","Rome","Turkey","Italy","A","1","1"
-"2","2","1","2020-06-13 15:00","Baku","Wales","Switzerland","A","0","1"
-"3","13","2","2020-06-17 21:00","Rome","Italy","Switzerland","A","1","2"
-"4","14","2","2020-06-17 18:00","Baku","Turkey","Wales","A","3","2"
-"5","25","3","2020-06-21 18:00","Rome","Italy","Wales","A","1","1"
-"6","26","3","2020-06-21 18:00","Baku","Switzerland","Turkey","A","2","0"
-"7","3","1","2020-06-13 21:00","Saint Petersburg","Belgium","Russia","B","2","0"
-"8","4","1","2020-06-13 18:00","Copenhagen","Denmark","Finland","B","1","1"
-"9","15","2","2020-06-17 15:00","Saint Petersburg","Finland","Russia","B","0","3"
-"10","16","2","2020-06-18 18:00","Copenhagen","Denmark","Belgium","B","0","1"
-"11","27","3","2020-06-22 21:00","Saint Petersburg","Finland","Belgium","B","1","3"
-"12","28","3","2020-06-22 21:00","Copenhagen","Russia","Denmark","B","3","1"
-"13","5","1","2020-06-14 21:00","Amsterdam","Netherlands","Ukraine","C","3","3"
-"14","6","1","2020-06-14 18:00","Bucharest","Austria","PO D","C","2","2"
-"15","17","2","2020-06-18 21:00","Amsterdam","Netherlands","Austria","C","1","1"
-"16","18","2","2020-06-18 15:00","Bucharest","Ukraine","PO D","C","2","2"
-"17","29","3","2020-06-22 18:00","Amsterdam","PO D","Netherlands","C","2","2"
-"18","30","3","2020-06-22 18:00","Bucharest","Ukraine","Austria","C","0","2"
-"19","7","1","2020-06-14 15:00","London","England","Croatia","D","3","0"
-"20","8","1","2020-06-15 15:00","Glasgow","PO C","Czech Republic","D","2","2"
-"21","19","2","2020-06-19 21:00","London","England","PO C","D","0","1"
-"22","20","2","2020-06-19 18:00","Glasgow","Croatia","Czech Republic","D","1","1"
-"23","31","3","2020-06-23 21:00","London","Czech Republic","England","D","3","1"
-"24","32","3","2020-06-23 21:00","Glasgow","Croatia","PO C","D","1","2"
-"25","9","1","2020-06-15 21:00","Bilbao","Spain","Sweden","E","0","2"
-"26","10","1","2020-06-15 18:00","Dublin","Poland","PO B","E","1","0"
-"27","21","2","2020-06-20 21:00","Bilbao","Spain","Poland","E","3","1"
-"28","22","2","2020-06-19 15:00","Dublin","Sweden","PO B","E","1","0"
-"29","33","3","2020-06-24 18:00","Bilbao","PO B","Spain","E","0","3"
-"30","34","3","2020-06-24 18:00","Dublin","Sweden","Poland","E","3","0"
-"31","11","1","2020-06-16 21:00","Munich","France","Germany","F","0","0"
-"32","12","1","2020-06-16 18:00","Budapest","PO A","Portugal","F","0","2"
-"33","23","2","2020-06-20 18:00","Munich","Portugal","Germany","F","0","0"
-"34","24","2","2020-06-20 15:00","Budapest","PO A","France","F","1","0"
-"35","35","3","2020-06-24 21:00","Munich","Germany","PO A","F","3","3"
-"36","36","3","2020-06-24 21:00","Budapest","Portugal","France","F","3","2"
-"37","38","4","2020-06-27 18:00","Amsterdam","Turkey","Russia","38","0","0"
-"38","37","4","2020-06-27 21:00","London","Switzerland","PO D","37","2","0"
-"39","39","4","2020-06-28 21:00","Bilbao","Belgium","Germany","39","2","0"
-"40","40","4","2020-06-28 18:00","Budapest","Austria","Poland","40","0","0"
-"41","42","4","2020-06-29 18:00","Copenhagen","Czech Republic","Spain","42","0","3"
-"42","41","4","2020-06-29 21:00","Bucharest","Portugal","England","41","2","2"
-"43","43","4","2020-06-30 21:00","Glasgow","Sweden","Netherlands","43","2","2"
-"44","44","4","2020-06-30 18:00","Dublin","PO C","PO A","44","3","1"
-"45","45","5","2020-07-03 18:00","Saint Petersburg","Portugal","Spain","45","2","0"
-"46","46","5","2020-07-03 21:00","Munich","Belgium","Switzerland","46","3","3"
-"47","48","5","2020-07-04 21:00","Rome","Sweden","PO C","48","3","2"
-"48","47","5","2020-07-04 18:00","Baku","Austria","Turkey","47","3","1"
-"49","49","6","2020-07-07 21:00","London","Belgium","Portugal","49","2","3"
-"50","50","6","2020-07-08 21:00","London","Sweden","Austria","50","2","0"
-"51","51","Final match","2020-07-12 21:00","London","Portugal","Sweden","51","4","3"
-"52","","","","TopScorer","kennedy","","","",""
-"53","","","","Yellow Cards","151","","","",""
-"54","","","","Competitor","results","","","",""
+Game_No,Round_Number,Date,Location,Home_Team,Away_Team,Group,Home,Away
+1,1,2020-06-12 21:00,Rome,Turkey,Italy,A,0,3
+2,1,2020-06-13 15:00,Baku,Wales,Switzerland,A,3,2
+13,2,2020-06-17 21:00,Rome,Italy,Switzerland,A,2,3
+14,2,2020-06-17 18:00,Baku,Turkey,Wales,A,3,0
+25,3,2020-06-21 18:00,Rome,Italy,Wales,A,0,0
+26,3,2020-06-21 18:00,Baku,Switzerland,Turkey,A,3,0
+3,1,2020-06-13 21:00,Saint Petersburg,Belgium,Russia,B,3,0
+4,1,2020-06-13 18:00,Copenhagen,Denmark,Finland,B,2,0
+15,2,2020-06-17 15:00,Saint Petersburg,Finland,Russia,B,2,3
+16,2,2020-06-18 18:00,Copenhagen,Denmark,Belgium,B,1,0
+27,3,2020-06-22 21:00,Saint Petersburg,Finland,Belgium,B,3,2
+28,3,2020-06-22 21:00,Copenhagen,Russia,Denmark,B,3,0
+5,1,2020-06-14 21:00,Amsterdam,Netherlands,Ukraine,C,2,0
+6,1,2020-06-14 18:00,Bucharest,Austria,PO D,C,2,0
+17,2,2020-06-18 21:00,Amsterdam,Netherlands,Austria,C,2,2
+18,2,2020-06-18 15:00,Bucharest,Ukraine,PO D,C,2,2
+29,3,2020-06-22 18:00,Amsterdam,PO D,Netherlands,C,2,0
+30,3,2020-06-22 18:00,Bucharest,Ukraine,Austria,C,0,3
+7,1,2020-06-14 15:00,London,England,Croatia,D,2,2
+8,1,2020-06-15 15:00,Glasgow,PO C,Czech Republic,D,3,0
+19,2,2020-06-19 21:00,London,England,PO C,D,1,3
+20,2,2020-06-19 18:00,Glasgow,Croatia,Czech Republic,D,1,3
+31,3,2020-06-23 21:00,London,Czech Republic,England,D,2,0
+32,3,2020-06-23 21:00,Glasgow,Croatia,PO C,D,1,0
+9,1,2020-06-15 21:00,Bilbao,Spain,Sweden,E,0,0
+10,1,2020-06-15 18:00,Dublin,Poland,PO B,E,1,0
+21,2,2020-06-20 21:00,Bilbao,Spain,Poland,E,2,1
+22,2,2020-06-19 15:00,Dublin,Sweden,PO B,E,1,0
+33,3,2020-06-24 18:00,Bilbao,PO B,Spain,E,2,3
+34,3,2020-06-24 18:00,Dublin,Sweden,Poland,E,2,1
+11,1,2020-06-16 21:00,Munich,France,Germany,F,3,0
+12,1,2020-06-16 18:00,Budapest,PO A,Portugal,F,2,0
+23,2,2020-06-20 18:00,Munich,Portugal,Germany,F,0,3
+24,2,2020-06-20 15:00,Budapest,PO A,France,F,0,1
+35,3,2020-06-24 21:00,Munich,Germany,PO A,F,3,3
+36,3,2020-06-24 21:00,Budapest,Portugal,France,F,0,2
+38,4,2020-06-27 18:00,Amsterdam,Italy,Denmark,38,2,3
+37,4,2020-06-27 21:00,London,Switzerland,PO D,37,2,2
+39,4,2020-06-28 21:00,Bilbao,Russia,Wales,39,0,0
+40,4,2020-06-28 18:00,Budapest,Austria,Germany,40,1,3
+42,4,2020-06-29 18:00,Copenhagen,"",Sweden,42,3,0
+41,4,2020-06-29 21:00,Bucharest,France,Belgium,41,2,0
+43,4,2020-06-30 21:00,Glasgow,Spain,Netherlands,43,2,1
+44,4,2020-06-30 18:00,Dublin,"",PO A,44,1,1
+45,5,2020-07-03 18:00,Saint Petersburg,France,"",45,0,1
+46,5,2020-07-03 21:00,Munich,Russia,Switzerland,46,3,2
+48,5,2020-07-04 21:00,Rome,Spain,"",48,3,1
+47,5,2020-07-04 18:00,Baku,Germany,Denmark,47,0,1
+49,6,2020-07-07 21:00,London,Russia,"",49,0,3
+50,6,2020-07-08 21:00,London,Spain,Denmark,50,3,0
+51,Final match,2020-07-12 21:00,London,"",Spain,51,2,0
+"","","",TopScorer,Write the last name of your guessed top scorer here,"","","",""
+"","","",Yellow Cards,3,"","","",""
+"","","",Competitor,results,"","","",""
+"","","",Email,Writeew@sdw,"","","",""

@@ -22,9 +22,9 @@ readResults <- function(today){
       competitorInd <- which(thisResult$Location == "Competitor")
       competitor <- thisResult[competitorInd,"Home_Team"]
       
-      colnames(thisResult)[1] <- "X"
-      thisResult$X <- as.integer(thisResult$X)
-      gameInd <- which(thisResult$X<=64)
+      # colnames(thisResult)[1] <- "X"
+      thisResult$Game_No <- as.integer(thisResult$Game_No)
+      gameInd <- which(thisResult$Game_No<=64)
       gamesTmp <- thisResult[gameInd,]
       gamesTmp$competitor <- competitor
       
@@ -50,7 +50,7 @@ readResults <- function(today){
   scoring <- read.csv("./Data/scoring.csv", sep=";")
   topScorerActual <- read.csv("./Data/topscorers.csv", sep=",")
   topScorerActual <- topScorerActual[order(-topScorerActual$Goals),]
-  
+
   
   correctGamesInd <- which(games$competitor == "results")
   correctGames <- games[correctGamesInd,]

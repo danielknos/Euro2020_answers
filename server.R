@@ -1,6 +1,6 @@
 server <- function(session, input, output) {
   
-  today <- "2020-07-20 23:00:00"
+  today <- "2020-06-20 23:00:00"
   dataIn <- readResults(today)
   allCompetitors <- unique(dataIn$games$competitor)
   allKnockOutOptions <- c("8th final","Quarter final","Semi final","Final","Winner")
@@ -8,9 +8,9 @@ server <- function(session, input, output) {
   updateSelectInput(session,"knockOutStage", choices = allKnockOutOptions, selected = allKnockOutOptions[1])
   updateSelectInput(session, 'competitor', choices = allCompetitors, selected = allCompetitors)
   
-  today <- Sys.time()
-  today <- format(today, format="%Y-%m-%d %H:%M:%S")
-  today <- "2020-07-20 23:00:00"
+  # today <- Sys.time()
+  # today <- format(today, format="%Y-%m-%d %H:%M:%S")
+  # today <- "2020-07-20 23:00:00"
   todayPlot <- paste(substr(today,1,10),"00:00:00")
   lastPlotDate <- min(todayPlot, "2020-07-20 00:00:00")
   print(lastPlotDate)
