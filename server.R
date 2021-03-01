@@ -1,6 +1,6 @@
 server <- function(session, input, output) {
   
-  today <- "2020-06-20 23:00:00"
+  today <- "2021-07-01 23:00:00"
   dataIn <- readResults(today)
   allCompetitors <- unique(dataIn$games$competitor)
   allKnockOutOptions <- c("8th final","Quarter final","Semi final","Final","Winner")
@@ -10,9 +10,9 @@ server <- function(session, input, output) {
   
   # today <- Sys.time()
   # today <- format(today, format="%Y-%m-%d %H:%M:%S")
-  # today <- "2020-07-20 23:00:00"
+  # today <- "2021-07-20 23:00:00"
   todayPlot <- paste(substr(today,1,10),"00:00:00")
-  lastPlotDate <- min(todayPlot, "2020-07-20 00:00:00")
+  lastPlotDate <- min(todayPlot, "2021-07-19 00:00:00")
   print(lastPlotDate)
   
   
@@ -44,7 +44,7 @@ server <- function(session, input, output) {
     results$Date <- as.POSIXct(results$Date)
     noOfSimDays <- input$noOfSimDays
     todaySim <- format(as.POSIXct(today)+noOfSimDays*24*3600,format="%Y-%m-%d %H:%M:%S")
-    lastPlotDateSim <- min(todaySim, "2020-07-15 00:00:00")
+    lastPlotDateSim <- min(todaySim, "2021-07-15 00:00:00")
     currentScore <- calcCurrentScore(games, results, scoring, yellowCards, topScorer, todaySim)
     
     leaderBoardDataSim <- reactive({
@@ -71,7 +71,7 @@ server <- function(session, input, output) {
     
     output$scoreGraph <- renderPlotly(plot_ly(scoreGraphDataSim(),x=~Date, y=~totScore, type = "scatter", mode="lines", color = ~competitor)%>%
                                         layout(height = 700, legend = list(orientation = "h", xanchor = "center", y=-0.15, x=0.5), title = "Aggregated scores", yaxis = list(title = "Score")
-                                               , xaxis = list(title = "Score as at date", range = c("2020-06-10 00:00:00",lastPlotDateSim))))
+                                               , xaxis = list(title = "Score as at date", range = c("2021-06-10 00:00:00",lastPlotDateSim))))
     
     updateTabsetPanel(session, "scoring_summaries", selected = "leaderboard")
   })
@@ -141,7 +141,7 @@ server <- function(session, input, output) {
   output$allscores <- renderDataTable(currentScore$scoringTable[which(currentScore$scoringTable$competitor %in% input$competitor),],rownames = FALSE,options = list(pageLength = 25))
   output$scoreGraph <- renderPlotly(plot_ly(scoreGraphData(),x=~Date, y=~totScore, type = "scatter", mode="lines", color = ~competitor)%>%
                                       layout(height = 700, legend = list(orientation = "h", xanchor = "center", y=-0.15, x=0.5), title = "Aggregated scores", yaxis = list(title = "Score")
-                                             , xaxis = list(title = "Score as at date", range = c("2020-06-10 00:00:00",lastPlotDate))))
+                                             , xaxis = list(title = "Score as at date", range = c("2021-06-10 00:00:00",lastPlotDate))))
   
   output$leaderBoard <- renderDataTable(leaderBoardData(), options = list(pageLength = 15),rownames = FALSE)
   output$yellowCardsActual <- renderDataTable(currentScore$yellowCardsActual, colnames = c(" ", "competitor", "Yellow cards until today"))
