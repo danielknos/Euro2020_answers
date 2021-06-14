@@ -1,0 +1,56 @@
+Game_No,Round_Number,Date,Location,Home_Team,Away_Team,Group,Home,Away
+1,1,2021-06-11 21:00,Rome,Turkey,Italy,A,1,2
+2,1,2021-06-12 15:00,Baku,Wales,Switzerland,A,1,2
+13,2,2021-06-16 21:00,Rome,Italy,Switzerland,A,1,1
+14,2,2021-06-16 18:00,Baku,Turkey,Wales,A,1,1
+25,3,2021-06-20 18:00,Rome,Italy,Wales,A,3,1
+26,3,2021-06-20 18:00,Baku,Switzerland,Turkey,A,0,1
+3,1,2021-06-12 21:00,Saint Petersburg,Belgium,Russia,B,3,0
+4,1,2021-06-12 18:00,Copenhagen,Denmark,Finland,B,2,0
+15,2,2021-06-16 15:00,Saint Petersburg,Finland,Russia,B,1,2
+16,2,2021-06-17 18:00,Copenhagen,Denmark,Belgium,B,0,2
+27,3,2021-06-21 21:00,Saint Petersburg,Finland,Belgium,B,0,3
+28,3,2021-06-21 21:00,Copenhagen,Russia,Denmark,B,1,1
+5,1,2021-06-13 21:00,Amsterdam,Netherlands,Ukraine,C,1,1
+6,1,2021-06-13 18:00,Bucharest,Austria,Macedonia,C,2,0
+17,2,2021-06-17 21:00,Amsterdam,Netherlands,Austria,C,2,1
+18,2,2021-06-17 15:00,Bucharest,Ukraine,Macedonia,C,3,0
+29,3,2021-06-21 18:00,Amsterdam,Macedonia,Netherlands,C,0,3
+30,3,2021-06-21 18:00,Bucharest,Ukraine,Austria,C,2,1
+7,1,2021-06-13 15:00,London,England,Croatia,D,2,1
+8,1,2021-06-14 15:00,Glasgow,Scotland,Czech Republic,D,1,1
+19,2,2021-06-18 21:00,London,England,Scotland,D,2,0
+20,2,2021-06-18 18:00,Glasgow,Croatia,Czech Republic,D,2,1
+31,3,2021-06-22 21:00,London,Czech Republic,England,D,0,1
+32,3,2021-06-22 21:00,Glasgow,Croatia,Scotland,D,2,0
+9,1,2021-06-14 21:00,Bilbao,Spain,Sweden,E,3,1
+10,1,2021-06-14 18:00,Dublin,Poland,Slovakia,E,2,0
+21,2,2021-06-19 21:00,Bilbao,Spain,Poland,E,2,0
+22,2,2021-06-18 15:00,Dublin,Sweden,Slovakia,E,2,1
+33,3,2021-06-23 18:00,Bilbao,Slovakia,Spain,E,0,3
+34,3,2021-06-23 18:00,Dublin,Sweden,Poland,E,2,2
+11,1,2021-06-15 21:00,Munich,France,Germany,F,1,1
+12,1,2021-06-15 18:00,Budapest,Hungary,Portugal,F,0,1
+23,2,2021-06-19 18:00,Munich,Portugal,Germany,F,1,2
+24,2,2021-06-19 15:00,Budapest,Hungary,France,F,0,3
+35,3,2021-06-23 21:00,Munich,Germany,Hungary,F,4,0
+36,3,2021-06-23 21:00,Budapest,Portugal,France,F,1,1
+38,4,2021-06-26 18:00,Amsterdam,Switzerland,Denmark,38,1,0
+37,4,2021-06-26 21:00,London,Italy,Ukraine,37,1,0
+39,4,2021-06-27 21:00,Bilbao,Belgium,Sweden,39,3,1
+40,4,2021-06-27 18:00,Budapest,Netherlands,Portugal,40,1,2
+42,4,2021-06-28 18:00,Copenhagen,Croatia,Poland,42,2,1
+41,4,2021-06-28 21:00,Bucharest,Germany,Russia,41,2,0
+43,4,2021-06-29 21:00,Glasgow,Spain,Turkey,43,1,0
+44,4,2021-06-29 18:00,Dublin,England,France,44,1,0
+45,5,2021-07-02 18:00,Saint Petersburg,Germany,Croatia,45,1,0
+46,5,2021-07-02 21:00,Munich,Belgium,Italy,46,2,1
+48,5,2021-07-03 21:00,Rome,Spain,England,48,1,2
+47,5,2021-07-03 18:00,Baku,Portugal,Switzerland,47,2,1
+49,6,2021-07-06 21:00,London,Belgium,Germany,49,1,0
+50,6,2021-07-07 21:00,London,England,Portugal,50,1,0
+51,Final match,2021-07-11 21:00,London,Belgium,England,51,2,1
+"","","",TopScorer,Romelu Lukaku,"","","",""
+"","","",Yellow Cards,200,"","","",""
+"","","",Competitor,Daniel Soler,"","","",""
+"","","",Email,daniel.eric.soler@gmail.com,"","","",""

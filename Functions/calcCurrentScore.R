@@ -243,7 +243,7 @@ calcCurrentScore <- function(games, results, scoring, yellowCards, topScorer, to
   knockOutSummary$Date <- knockOutSummary$finishDate
   knockOutSummary$finishDate <- NULL
   
-  allFinals$Date <- as.POSIXct("2018-07-15 20:00:00")
+  allFinals$Date <- as.POSIXct("2021-07-11 20:00:00")
   allFinals$Stage <- "Winner"
   allFinals$Winner <- NULL
  

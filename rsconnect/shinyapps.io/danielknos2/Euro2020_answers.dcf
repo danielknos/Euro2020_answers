@@ -1,0 +1,12 @@
+name: Euro2020_answers
+title: Euro2020_answers
+username:
+account: danielknos2
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3716341
+bundleId: 4712206
+url: https://danielknos2.shinyapps.io/Euro2020_answers/
+when: 1623617962.49797
+asMultiple: FALSE
+asStatic: FALSE

@@ -3,9 +3,18 @@ header <- dashboardHeader(title = ' Euro 2020')
 
 
 sidebar <- dashboardSidebar(
+  width = 300,
   tags$img(src='https://www.initialvip.com/wp-content/uploads/2019/06/Euro-2020.png', height = 180, width = 180),
   sidebarMenu(
-    selectInput("competitor", "Select competitor", multiple = TRUE, choices = NULL, selected = NULL),
+    # selectInput("competitor", "Select competitor", multiple = TRUE, choices = NULL, selected = NULL),
+    shinyWidgets::pickerInput(
+      "competitor", 
+      "Select competitor", 
+      multiple = TRUE, 
+      choices = NULL, 
+      selected = NULL, 
+      options = list(`actions-box` = TRUE)
+    ),
     id = 'tabs',
     menuItem('Scoring summary', icon = icon("table"),
              menuSubItem('Leaderboard', tabName = 'leaderboard'),
@@ -58,10 +67,19 @@ body <- dashboardBody(
               title = 'Daily scores',
               color = 'navy',
               type = 2,
-              width = 8,
+              width = 4,
               collapsible = FALSE,
               boxToolSize = 'xs',
               dataTableOutput("allscores")
+            ),
+            widgetUserBox(
+              title = 'Daily score',
+              color = 'navy',
+              type = 2,
+              width = 8,
+              collapsible = FALSE,
+              boxToolSize = 'xs',
+              plotlyOutput("daily_score_graph")
             )),
     tabItem(tabName = 'played_games',
             widgetUserBox(
@@ -108,7 +126,7 @@ body <- dashboardBody(
               dataTableOutput("final8")
             ),
             widgetUserBox(
-              title = 'Acutal teams',
+              title = 'Actual teams',
               color = 'navy',
               type = 2,
               width = 4,
@@ -127,7 +145,7 @@ body <- dashboardBody(
               dataTableOutput("final4")
             ),
             widgetUserBox(
-              title = 'Acutal teams',
+              title = 'Actual teams',
               color = 'navy',
               type = 2,
               width = 4,
@@ -146,7 +164,7 @@ body <- dashboardBody(
               dataTableOutput("final2")
             ),
             widgetUserBox(
-              title = 'Acutal teams',
+              title = 'Actual teams',
               color = 'navy',
               type = 2,
               width = 4,
@@ -165,7 +183,7 @@ body <- dashboardBody(
               dataTableOutput("final1")
             ),
             widgetUserBox(
-              title = 'Acutal teams',
+              title = 'Actual teams',
               color = 'navy',
               type = 2,
               width = 4,
@@ -184,7 +202,7 @@ body <- dashboardBody(
               dataTableOutput("winner")
             ),
             widgetUserBox(
-              title = 'Acutal winner',
+              title = 'Actual winner',
               color = 'navy',
               type = 2,
               width = 4,

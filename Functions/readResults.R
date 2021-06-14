@@ -14,7 +14,6 @@ readResults <- function(today){
     if(fileName != "./Data/scoring.csv" & fileName != "./Data/topscorers.csv"){
       
       if(fileName == "./Data/results.csv"){
-        
         thisResult <- read.csv(fileName, stringsAsFactors = FALSE,encoding="latin", sep=",")
       }else{
         thisResult <- read.csv(fileName, stringsAsFactors = FALSE,encoding="latin")

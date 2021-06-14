@@ -1,15 +1,14 @@
-source('./sourcing.R')
+  source('./sourcing.R')
 
 
-ui <- dashboardPage(
-  header,
-  sidebar,
-  body
-)
+  ui <- dashboardPage(
+    header,
+    sidebar,
+    body
+  )
 
 
-
-shinyApp(ui, server)
+  shinyApp(ui, server)
 
 
 

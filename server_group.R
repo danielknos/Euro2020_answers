@@ -1,12 +1,17 @@
 server <- function(session, input, output) {
   
-  today <- "2021-07-01 23:00:00"
+  today <- "2021-06-14 17:00:00"
   dataIn <- readResults(today)
   allCompetitors <- unique(dataIn$games$competitor)
   allKnockOutOptions <- c("8th final","Quarter final","Semi final","Final","Winner")
   updateSelectInput(session,"knockOutStageTeamsLeft", choices = allKnockOutOptions, selected = allKnockOutOptions[1])
   updateSelectInput(session,"knockOutStage", choices = allKnockOutOptions, selected = allKnockOutOptions[1])
-  updateSelectInput(session, 'competitor', choices = allCompetitors, selected = allCompetitors)
+  # updateSelectInput(session, 'competitor', choices = allCompetitors, selected = allCompetitors)
+  updatePickerInput(session, 'competitor', choices = allCompetitors, selected = allCompetitors, 
+    choicesOpt = list(
+      style = rep_len("color: black;", length(allCompetitors)))
+      # rep(("color: black; background: lightgrey; font-weight: bold;"),10)))
+  )
   
   # today <- Sys.time()
   # today <- format(today, format="%Y-%m-%d %H:%M:%S")
@@ -32,11 +37,13 @@ server <- function(session, input, output) {
   observeEvent(input$fillAllCompetitors,{
     allCompetitors <- unique(games$competitor)
     print(allCompetitors)
-    updateSelectInput(session,"competitor",choices = allCompetitors, selected = allCompetitors)
+    # updateSelectInput(session,"competitor",choices = allCompetitors, selected = allCompetitors)
+    updatePickerInput(session,"competitor",choices = allCompetitors, selected = allCompetitors)
   })
   observeEvent(input$removeAllCompetitors,{
     allCompetitors <- unique(games$competitor)
-    updateSelectInput(session,"competitor",choices = allCompetitors, selected = NULL)
+    # updateSelectInput(session,"competitor",choices = allCompetitors, selected = NULL)
+    updatePickerInput(session,"competitor",choices = allCompetitors, selected = NULL)
   })
   
   observeEvent(input$simulate,{
@@ -63,15 +70,20 @@ server <- function(session, input, output) {
     
     output$leaderBoard <- renderDataTable(leaderBoardDataSim(), options = list(pageLength = 15),rownames = FALSE)
     output$group_matches_played <- renderDataTable(datatable(groupMatches_score_playedSim(), options = list(pageLength = 25,order = list(list(1, 'desc'), list(0, 'asc'))),rownames = FALSE) %>% 
+                                                     formatDate(1, "toLocaleString") %>% 
                                                      formatStyle("score",target="row", backgroundColor = styleInterval(c(1),c("","lightgray"))))
     
     output$group_matches_unplayed <- renderDataTable(datatable(groupMatches_score_unplayedSim(), options = list(pageLength = 25,order = list(list(1, 'asc'), list(0, 'asc'))),rownames = FALSE)) 
     output$allscores <- renderDataTable(currentScore$scoringTable[which(currentScore$scoringTable$competitor %in% input$competitor),],rownames = FALSE,options = list(pageLength = 25))
-    
+    tmp = currentScore$scoringTable
+    tmp = tmp[tmp$score > 0, ]
+    output$daily_score_graph = renderPlotly(
+      plot_ly(tmp[tmp$competitor %in% input$competitor, ], x = ~Date, y = ~score, split = ~competitor, type = 'bar') %>% layout(yaxis = list(title = 'Daily scores'), barmode = 'group')
+    )
     
     output$scoreGraph <- renderPlotly(plot_ly(scoreGraphDataSim(),x=~Date, y=~totScore, type = "scatter", mode="lines", color = ~competitor)%>%
                                         layout(height = 700, legend = list(orientation = "h", xanchor = "center", y=-0.15, x=0.5), title = "Aggregated scores", yaxis = list(title = "Score")
-                                               , xaxis = list(title = "Score as at date", range = c("2021-06-10 00:00:00",lastPlotDateSim))))
+                                               , xaxis = list(title = "Score as at date", range = c("2021-06-11 00:00:00",lastPlotDateSim))))
     
     updateTabsetPanel(session, "scoring_summaries", selected = "leaderboard")
   })
@@ -124,9 +136,13 @@ server <- function(session, input, output) {
   })
   
   
-  output$group_matches_played <- renderDataTable(datatable(groupMatches_score_played(), options = list(pageLength = 25,order = list(list(1, 'desc'), list(0, 'asc'))),rownames = FALSE) %>% 
-                                                   formatStyle("score",target="row", backgroundColor = styleInterval(c(1),c("","lightgray"))))
-  output$group_matches_unplayed <- renderDataTable(datatable(groupMatches_score_unplayed(), options = list(pageLength = 25,order = list(list(1, 'asc'), list(0, 'asc'))),rownames = FALSE)) 
+  output$group_matches_played <- renderDataTable(datatable(groupMatches_score_played(), 
+                                              options = list(pageLength = 25,order = list(list(1, 'desc'), list(0, 'asc'))),rownames = FALSE) %>% 
+                                              formatDate(2, "toLocaleString") %>% 
+                                              formatStyle("score",target="row", backgroundColor = styleInterval(c(1),c("","lightgray"))))
+  output$group_matches_unplayed <- renderDataTable(datatable(groupMatches_score_unplayed(), 
+                                              options = list(pageLength = 25,order = list(list(1, 'asc'), list(0, 'asc'))),rownames = FALSE) %>% 
+                                              formatDate(2, "toLocaleString")) 
   
   output$final8 <- renderDataTable(datatable(final8_score(), filter = "top", options = list(pageLength = 25),rownames = FALSE) %>% formatStyle("score",target="row", backgroundColor = styleInterval(c(1),c("","lightgray"))))
   output$final8Actual <- renderDataTable(final8_scoreActual(), options = list(pageLength = 16),rownames = FALSE)
@@ -139,9 +155,16 @@ server <- function(session, input, output) {
   output$winner <- renderDataTable(currentScore$allWinners, options = list(pageLength = 25), filter = "top",rownames = FALSE)
   output$winnerActual <- renderDataTable(currentScore$winnerActual,rownames = FALSE)
   output$allscores <- renderDataTable(currentScore$scoringTable[which(currentScore$scoringTable$competitor %in% input$competitor),],rownames = FALSE,options = list(pageLength = 25))
+  tmp = currentScore$scoringTable
+  tmp = tmp[tmp$score > 0, ]
+  output$daily_score_graph = renderPlotly(
+    plot_ly(tmp[tmp$competitor %in% input$competitor, ], x = ~Date, y = ~score, split = ~competitor, type = 'bar') %>% layout(yaxis = list(title = 'Daily scores'), barmode = 'group')
+  )
+ 
+ 
   output$scoreGraph <- renderPlotly(plot_ly(scoreGraphData(),x=~Date, y=~totScore, type = "scatter", mode="lines", color = ~competitor)%>%
                                       layout(height = 700, legend = list(orientation = "h", xanchor = "center", y=-0.15, x=0.5), title = "Aggregated scores", yaxis = list(title = "Score")
-                                             , xaxis = list(title = "Score as at date", range = c("2021-06-10 00:00:00",lastPlotDate))))
+                                             , xaxis = list(title = "Score as at date", range = c("2021-06-11 00:00:00",lastPlotDate))))
   
   output$leaderBoard <- renderDataTable(leaderBoardData(), options = list(pageLength = 15),rownames = FALSE)
   output$yellowCardsActual <- renderDataTable(currentScore$yellowCardsActual, colnames = c(" ", "competitor", "Yellow cards until today"))
@@ -150,7 +173,6 @@ server <- function(session, input, output) {
   
   rendertext <- paste0("function (instance, td, row, col, prop, value, cellProperties) {Handsontable.renderers.NumericRenderer.apply(this, arguments);
                                 if (row >= ",todayRowInds," & col >=7 & col <= 8) {     td.style.background = 'lightgrey';}}")
-  print(rendertext)
   output$simulator <- renderRHandsontable(rhandsontable(cbind(results[,c("Group","Game_No","Round_Number")],
                                                               "Date" = as.character(results[,c("Date")]),
                                                               results[,c("Location","Home_Team","Away_Team","Home_actual","Away_actual","competitor")],
